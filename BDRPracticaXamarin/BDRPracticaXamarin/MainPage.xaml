@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BDRPracticaXamarin.MainPage"
+			 NavigationPage.HasNavigationBar="False">
+
+    <StackLayout>
+		<Frame BackgroundColor="#46368C" Padding="10" CornerRadius="0">
+            <Label Text="Lista Clientes" HorizontalTextAlignment="Center" TextColor="White" FontSize="20"/>
+        </Frame>
+
+		<Button Text="Nuevo Cliente" FontAttributes="Bold" Margin="20, 0" HorizontalOptions="EndAndExpand" BackgroundColor="#028CB1"
+				x:Name="NuevoClienteButton" Clicked="NuevoClienteButton_Clicked"/>
+
+		<ListView ItemsSource="{Binding Clientes}" SelectionMode="Single" SeparatorColor="Gray"
+				  HasUnevenRows="True" VerticalOptions="FillAndExpand" Margin="20,0" x:Name="ClientesListView"
+				  IsPullToRefreshEnabled="True" IsRefreshing="False" Refreshing="ClientesListView_Refreshing">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<SwipeView SwipeStarted="SwipeView_SwipeStarted" SwipeEnded="SwipeView_SwipeEnded" BackgroundColor="#AAF1F6">
+							<SwipeView.LeftItems>
+								<SwipeItems SwipeBehaviorOnInvoked="Close" Mode="Reveal">
+									<SwipeItem Text="Delete" BackgroundColor="#DF4646" x:Name="DeletSwipe" Invoked="DeletSwipe_Invoked"/>
+									<SwipeItem Text="Edit" BackgroundColor="#7BE848" x:Name="EditSwipe" Invoked="EditSwipe_Invoked"/>
+								</SwipeItems>
+								
+							</SwipeView.LeftItems>
+							
+							<StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" 
+										 BackgroundColor="#AAF1F6" Padding="10,0">
+								<StackLayout Orientation="Horizontal">
+									<Label Text="Nombre: " FontAttributes="Bold" TextColor="Black"/>
+									<Label Text="{Binding Nombre}"  TextColor="Black"/>
+								</StackLayout>
+								<StackLayout Orientation="Horizontal">
+									<Label Text="Direccion: " FontAttributes="Bold" TextColor="Black"/>
+									<Label Text="{Binding Direccion}" TextColor="Black"/>
+								</StackLayout>
+								<StackLayout Orientation="Horizontal">
+									<Label Text="Poblacion: " FontAttributes="Bold" TextColor="Black"/>
+									<Label Text="{Binding Poblacion}" TextColor="Black"/>
+								</StackLayout>
+								<StackLayout Orientation="Horizontal">
+									<Label Text="Pais: " FontAttributes="Bold" TextColor="Black"/>
+									<Label Text="{Binding NombrePais}" TextColor="Black"/>
+								</StackLayout>
+								<StackLayout Orientation="Horizontal">
+									<Label Text="Telefono: " FontAttributes="Bold" TextColor="Black"/>
+									<Label Text="{Binding Telefono}" TextColor="Black"/>
+								</StackLayout>
+								<StackLayout Orientation="Horizontal">
+									<Label Text="Email: " FontAttributes="Bold" TextColor="Black"/>
+									<Label Text="{Binding Email}" TextColor="Black"/>
+								</StackLayout>
+							</StackLayout>
+						</SwipeView>
+						
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+		
+		
+		
+	</StackLayout>
+
+</ContentPage>

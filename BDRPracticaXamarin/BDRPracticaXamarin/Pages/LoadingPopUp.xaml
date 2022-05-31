@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xct:Popup xmlns="http://xamarin.com/schemas/2014/forms"
+			xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+		    Size="300,100"
+			IsLightDismissEnabled="False"
+            x:Class="BDRPracticaXamarin.Pages.LoadingPopUp">
+
+	<StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+		<Image Source="spinner.gif" IsAnimationPlaying="True" HorizontalOptions="StartAndExpand"></Image>
+		<Label x:Name="messageText" FontSize="15" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"  TextColor="Black"/>
+	</StackLayout>
+	
+</xct:Popup>

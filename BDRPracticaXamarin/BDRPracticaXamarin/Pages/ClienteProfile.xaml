@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BDRPracticaXamarin.Pages.ClienteProfile"
+			 NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout Padding="20" Orientation="Vertical" HorizontalOptions="StartAndExpand">
+			<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" x:Name="IdLayout">
+				<Label Text="Id" FontAttributes="Bold" VerticalOptions="CenterAndExpand" FontSize="20"/>
+				<Entry x:Name="IdEntry" HorizontalOptions="EndAndExpand" WidthRequest="200" IsReadOnly="True"/>
+			</StackLayout>
+			<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+				<Label Text="Nombre" FontAttributes="Bold" VerticalOptions="CenterAndExpand" FontSize="20"/>
+				<Entry x:Name="NombreEntry" HorizontalOptions="EndAndExpand" WidthRequest="200"/>
+			</StackLayout>
+			<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+				<Label Text="Direccion" FontAttributes="Bold" VerticalOptions="CenterAndExpand" FontSize="20"/>
+				<Entry x:Name="DireccionEntry" HorizontalOptions="EndAndExpand" WidthRequest="200"/>
+			</StackLayout>
+			<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+				<Label Text="Población" FontAttributes="Bold" VerticalOptions="CenterAndExpand" FontSize="20"/>
+				<Entry x:Name="PoblacionEntry" HorizontalOptions="EndAndExpand" WidthRequest="200"/>
+			</StackLayout>
+			<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+				<Label Text="Pais" FontAttributes="Bold" VerticalOptions="CenterAndExpand" FontSize="20"/>
+				<Picker x:Name="PaisPicker" HorizontalOptions="EndAndExpand" WidthRequest="200"/>
+			</StackLayout>
+			<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+				<Label Text="Teléfono" FontAttributes="Bold" VerticalOptions="CenterAndExpand" FontSize="20"/>
+				<Entry x:Name="TelefonoEntry" HorizontalOptions="EndAndExpand" WidthRequest="200" Keyboard="Telephone"/>
+			</StackLayout>
+			<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+				<Label Text="Email" FontAttributes="Bold" VerticalOptions="CenterAndExpand" FontSize="20"/>
+				<Entry x:Name="EmailEntry" HorizontalOptions="EndAndExpand" WidthRequest="200" Keyboard="Email"/>
+			</StackLayout>
+			<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
+				<Button Text="Cancelar" BackgroundColor="#DF4646" HorizontalOptions="CenterAndExpand" 
+						WidthRequest="150" x:Name="CancelarButton" Clicked="CancelarButton_Clicked"/>
+				<Button Text="Guardar" Background="#7BE848"  HorizontalOptions="Center" 
+						WidthRequest="150" x:Name="GuardarButton" Clicked="GuardarButton_Clicked"/>
+			</StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
